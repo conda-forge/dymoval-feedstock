@@ -1,27 +1,26 @@
 {% set name = "dymoval" %}
-{% set version = "0.9.0" %}
-{% set python_min = "3.10" %}
+{% set version = "0.8.84" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dymoval-{{ version }}.tar.gz
-  sha256: f843cfe24388ec4cf27f92335114511917697445f9aa3ce4da8fbafba9851462
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dymoval-{{ version }}.tar.gz
+  sha256: c1228dae844a5859f1551c9ded69658308b0aab8c922471172f19352332f07d5
 
 build:
-  noarch: python {{ python_min }}
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python >={{ python_min }}
+    - python >=3.10
     - pdm-backend
     - pip
   run:
-    - python >={{ python_min }}
+    - python >=3.10
     - pandas
     - matplotlib-base
     - scipy
@@ -45,7 +44,7 @@ test:
 
 about:
   home: https://github.com/ubaldot/dymoval
-  summary: Dymoval is a Python package for analyzing measurements datasets and validate models.
+  summary: Dymoval is a Python package for validating models and analyzing datasets.
   license: BSD-3-Clause
   license_file: LICENSE
 
