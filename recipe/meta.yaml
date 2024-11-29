@@ -40,6 +40,7 @@ test:
     - pip check
     - pytest ./tests -k "not test_open_tutorial"
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
 
