@@ -29,6 +29,7 @@ requirements:
     - numpy
     - tomli
     - h5py
+    - typing_extensions
 
 test:
   source_files:
